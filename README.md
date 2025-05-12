@@ -3,6 +3,22 @@
 This project presents a deep learning-driven pipeline to make textbook diagrams, maps, and charts more accessible to blind and visually impaired students. The system integrates vision-language modeling, complexity analysis, sentence simplification, and natural-sounding TTS to produce vivid, simplified, and speech-friendly descriptions of visual educational content.
 
 ---
+## Demo 
+Input : ![image](https://github.com/user-attachments/assets/585f059b-5e92-4d16-8c80-10806dbf4ef6)
+Output :
+**Introduction (Context & Purpose):**  
+This chart is like a profile of the ocean, showing how the temperature of water changes as you go deeper. In oceanography, understanding this relationship is important because it helps us learn about marine ecosystems, ocean currents, and how heat is distributed in the ocean. The chart represents the temperature of water at different depths, and it reveals distinct patterns in various ocean zones.
+
+**Breakdown of Data (Sensory & physical Language):**  
+Imagine running your fingers over a long hill that gets colder as you go down. The chart shows a sharp drop in temperature as depth increases, especially in the mid-latitudes. The blue line on the chart plummets like an elevator in a skyscraper, starting from a warm temperature near the surface and rapidly descending to colder temperatures at around 1000 meters. Beyond this point, the temperature continues to decrease, but at a more gradual pace. In contrast, the temperature in the torrid zone (near the equator) remains relatively stable for a while before it starts to decrease with depth, as shown by the dotted line. The graph can be likened to tracing a landscape with your hand, where the surface is warm, and as you move downward, the temperature drops sharply, then levels out.
+
+**Key Insights (Textbook Relevance):**  
+The chart illustrates the concept of thermoclines, where the temperature drops significantly with depth, particularly in mid-latitude regions. This is a key concept in understanding ocean stratification — large body of water constituting a principal part of the hydrosphere, where layers of water form based on temperature and density differences. Just as how layers in a cake are distinct, the ocean has distinct layers, with the surface being warmer and less dense, and deeper layers being colder and denser. This stratification affects marine life distribution and ocean circulation patterns. For example, in colder regions, the temperature drops more sharply with depth, whereas in warmer regions, the change is more gradual.
+
+**Conclusion (Summary & Importance):**  
+In summary, this chart tells the story of how water temperature changes with depth, much like a journey from a warm surface to the cold depths of the ocean. Understanding this is important for oceanography because it helps us understand how oceans regulate climate, support marine life, and influence weather patterns. The chart is a simple yet powerful tool for visualizing these complex relationships, making it a valuable resource for studying the ocean’s behavior.
+
+---
 
 ## 🗂 Project Structure
 
