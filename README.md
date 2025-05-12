@@ -8,7 +8,7 @@ This project presents a deep learning-driven pipeline to make textbook diagrams,
 ## Demo
 
 ### Input
-![Ocean Temperature Depth Chart](https://github.com/user-attachments/assets/585f059b-5e92-4d16-8c80-10806dbf4ef6)
+<img src="https://github.com/user-attachments/assets/585f059b-5e92-4d16-8c80-10806dbf4ef6" alt="Ocean Temperature Depth Chart" width="400" />
 
 ### Output
 
