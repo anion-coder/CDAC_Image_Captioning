@@ -33,73 +33,121 @@ This project analyzes the complexity of text and provides simplification suggest
 
 ---
 
-## 📦 Dependencies
+## 🔍 Problem Statement
 
-Make sure you have Python 3.x and install the following libraries:
+Blind students face major barriers in understanding visual elements in science and geography textbooks. Traditional Braille and audio alternatives often fail to convey detailed visual information, and existing image captioning or TTS systems lack context, clarity, or emotional tone.
+
+---
+
+## 🧩 Proposed Solution
+
+We propose a **modular pipeline** that:
+- Generates sensory-rich image descriptions using **vLLMs**
+- Classifies and simplifies text using a **Text Complexity Neural Network**
+- Identifies and replaces complex words with simpler alternatives via **BERT-MLM**
+- Annotates domain-specific terms inline with Wikipedia or WordNet definitions
+- Adds **punctuation for prosody** and synthesizes clear, natural Indian-accented audio via **Parler-TTS**
+
+---
+
+## 🧱 System Architecture
 
 ```
-pip install pandas numpy nltk textstat scikit-learn sentence-transformers \
-tensorflow torch matplotlib seaborn transformers huggingface_hub keybert \
-deepmultilingualpunctuation spacy rouge wordfreq gensim gradio ollama groq requests
+Chart Image → Vision-Language Model → Text Complexity Classifier
+            → Sentence Simplifier (BERT + Zipf)
+            → Domain Term Annotator (KeyBERT + Wikipedia)
+            → Punctuation Restorer
+            → Parler-TTS 
+            → Accessible Audio Output
 ```
 
-Also download the required NLTK and spaCy resources:
+---
 
-```
-python -m nltk.downloader punkt
-python -m nltk.downloader averaged_perceptron_tagger
-python -m nltk.downloader wordnet
-python -m nltk.downloader omw-1.4
+## 🔬 Core Components
+
+### 1. Vision-Language Model
+Uses vLLM (e.g., Meta-LLaMA-4-Maverick) to generate metaphor- and sensory-rich descriptions of educational charts.
+
+### 2. Text Complexity Model (TCM-NN)
+A hybrid neural model combining:
+- **Sentence-BERT embeddings**
+- **Handcrafted features** (Flesch, Fog, sentence length, unique word ratio)
+
+### 3. Sentence Simplification
+- Complex Word Identification via BiLSTM (trained on CWISHARED)
+- BERT MLM used for masked word prediction
+- Zipf frequency used to choose simpler substitutes
+
+### 4. Domain Term Explanation
+- KeyBERT extracts key subject terms
+- Wikipedia or WordNet definitions inserted inline
+
+### 5. Punctuation Restoration
+- Adds commas and full stops to improve prosody in TTS output
+
+### 6. Text-to-Speech (TTS)
+- Parler-TTS used for natural Indian-accented voice output
+- Emphasizes tone, pause, and clarity for blind learners
+
+---
+
+## 📊 Results
+
+| Metric                       | Before | After |
+|-----------------------------|--------|-------|
+| **Average Zipf Score**      | 4.2    | 6.8   |
+| **Readability Grade**       | 10     | 6     |
+| **Comprehension (User)**    | 3.1    | 4.6   |
+
+
+---
+
+## 🧠 Example Output
+
+**Input Image Description:**  
+"This graph shows temperature change with ocean depth."
+
+**Generated Simplified Description:**  
+"The line drops like a cliff, showing a sharp temperature decrease. This graph shows how cold water sinks deeper. The thermocline (a layer where temperature changes quickly with depth) is shown clearly."
+
+---
+
+## 💾 Installation
+
+```bash
+pip install nltk wikipedia torch pandas transformers sentence-transformers wordfreq spacy keybert soundfile
+python -m nltk.downloader punkt averaged_perceptron_tagger wordnet omw-1.4
 python -m spacy download en_core_web_sm
 ```
 
 ---
 
-## 🚀 Usage
-
-### 1. Analyze Text Complexity
+## 🧪 Test Example
 
 ```python
-input_text = "This is an example of a complex sentence with technical terms."
-complexity_level = model.predict_complexity(input_text)
-print("Complexity Level:", complexity_level)
-```
+from simplify_pipeline import annotate_subject_terms, simplify_text, tts_convert
 
-### 2. Generate Simplification Suggestions
-
-```python
-simplification_candidates = model.generate_simplification(input_text)
-print("Suggestions:", simplification_candidates)
-```
-
-### 3. Annotate Subject Terms
-
-```python
-annotated_text = annotate_subject_terms(input_text)
-print("Annotated:", annotated_text)
+text = "Ocean stratification influences nutrient flow across the thermocline."
+simplified = simplify_text(text)
+annotated = annotate_subject_terms(simplified)
+audio = tts_convert(annotated)
 ```
 
 ---
 
-## 🧪 Example
+## 📍 Dataset Sources
 
-```python
-Input:
-"Ocean stratification influences nutrient flow across the thermocline."
-
-Output:
-"Ocean stratification (the natural separation of ocean water into layers) influences nutrient flow across the thermocline (a distinct layer in water based on temperature)."
-```
+- CWISHARED 2018 (Complex Word Identification)
+- Simple Wikipedia + Educational Corpora (for complexity training)
 
 ---
 
-## 🤝 Contributing
+## 👨‍🔬 Authors
 
-Contributions are welcome!  
-Feel free to open issues, suggest features, or submit pull requests.
+Siddhanth Moraje, Simran Sota, Shriya Deshpande, Sakshi Golatkar,  
+Leena Chourey, Vinaya Sawant, Prachi Tawde  
+Dwarkadas J. Sanghvi College of Engineering, Mumbai, India
 
 ---
 
-## 📄 License
 
-This project is licensed under the MIT License.
