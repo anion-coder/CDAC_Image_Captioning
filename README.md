@@ -1,9 +1,10 @@
-# 🧠 Enhancing Image Accessibility for Blind Students
+## 🧠 Enhancing Image Accessibility for Blind Students
 
 This project presents a deep learning-driven pipeline to make textbook diagrams, maps, and charts more accessible to blind and visually impaired students. The system integrates vision-language modeling, complexity analysis, sentence simplification, and natural-sounding TTS to produce vivid, simplified, and speech-friendly descriptions of visual educational content.
 
 ---
-Google Collab File : https://colab.research.google.com/drive/1dguVnyBFkFuY9guh4lcjSto-Dp7v4jyB?usp=sharing
+## Google Collab File : 
+https://colab.research.google.com/drive/1dguVnyBFkFuY9guh4lcjSto-Dp7v4jyB?usp=sharing
 ---
 ## Demo 
 Input : ![image](https://github.com/user-attachments/assets/585f059b-5e92-4d16-8c80-10806dbf4ef6)
