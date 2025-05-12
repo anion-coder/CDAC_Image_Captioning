@@ -1,6 +1,6 @@
-# 📚 Text Complexity and Simplification with BERT and Handcrafted Features
+# 🧠 Enhancing Image Accessibility for Blind Students
 
-This project analyzes the complexity of text and provides simplification suggestions using a combination of BERT embeddings and handcrafted readability features. It uses a multi-task learning approach to classify complexity and generate simpler alternatives.
+This project presents a deep learning-driven pipeline to make textbook diagrams, maps, and charts more accessible to blind and visually impaired students. The system integrates vision-language modeling, complexity analysis, sentence simplification, and natural-sounding TTS to produce vivid, simplified, and speech-friendly descriptions of visual educational content.
 
 ---
 
